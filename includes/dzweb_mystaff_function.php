@@ -5,11 +5,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /* Required Files */
+
 require_once 'lib/dzweb_mystaff_post_types.php'; // Adds Custom Posts Types
 require_once 'lib/dzweb_mystaff_relationships.php'; 
-
 require_once 'lib/class-tgm-plugin-activation.php';
  
+/* Scripts and Stylesheets Installed */
+
+function dzweb_mystaff_scripts() {
+    wp_enqueue_style( 'dzweb_mystaff_style', plugin_dir_path( __FILE__ ) . '/css/style.css' );
+    wp_enqueue_script( 'dzweb_mystaff_js', plugin_dir_path( __FILE__ ) . '/js/dzweb_mystaff.js', true);
+}
+add_action( 'wp_enqueue_scripts', 'dzweb_mystaff_scripts' );
+ 
+/* Plugin Required */ 
+
 add_action( 'tgmpa_register', 'dzweb_mystaff_register_required_plugins' );
 
 /* WARNING: DO NOT EDIT ANY CODE BELOW THIS POINT UNDER ANY CIRCUMSTANCES! */
