@@ -163,7 +163,7 @@ if( !function_exists('get_office_template') ):
  function get_office_template($single_template) {
     global $wp_query, $post;
     if ($post->post_type == 'office'){
-        $single_template = plugin_dir_path(__FILE__) . 'office.php';
+        $single_template = plugin_dir_path(__FILE__) . 'single-office.php';
     }//end if office
     return $single_template;
 }//end get_office_template function
@@ -175,7 +175,7 @@ if( !function_exists('get_department_template') ):
  function get_department_template($single_template) {
     global $wp_query, $post;
     if ($post->post_type == 'department'){
-        $single_template = plugin_dir_path(__FILE__) . 'department.php';
+        $single_template = plugin_dir_path(__FILE__) . 'single-department.php';
     }//end if department
     return $single_template;
 }//end get_department_template function
@@ -187,7 +187,7 @@ if( !function_exists('get_staff_template') ):
  function get_staff_template($single_template) {
     global $wp_query, $post;
     if ($post->post_type == 'staff'){
-        $single_template = plugin_dir_path(__FILE__) . 'staff.php';
+        $single_template = plugin_dir_path(__FILE__) . 'single-staff.php';
     }//end if staff
     return $single_template;
 }//end get_staff_template function
